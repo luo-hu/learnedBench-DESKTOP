@@ -24,14 +24,6 @@
 
 
 namespace bench { namespace utils { 
-    // 在文件开头添加以下定义
-template<size_t dim>
-using vec_of_box_t = std::vector<box_t<dim>>; // 定义 vec_of_box_t
-
-template<size_t dim>
-struct polygon_t { // 定义 polygon_t 结构
-    std::vector<point_t<dim>> vertices;
-};
 
 // generate n d-dimensional uniform points in range [0, r]
 inline void gen_uniform(const std::string& fname, const int n, const int d, const double r) {
@@ -585,9 +577,9 @@ inline void read_osmtiger(std::vector<std::pair<box_t<dim>,polygon_t<dim>>>& out
 
         outpairs.push_back(std::make_pair(onebox,onepolygon));
         count++;
+        // if(count%100000==0) std::cout<<"count: "<<count<<std::endl;
     }
-    std::cout<<"datautils.hpp  589 count: "<<count<<std::endl;
-
+    
     std::cout<<"read_osmtiger finished"<<std::endl;
     in.close();
     tpie::tpie_finish();

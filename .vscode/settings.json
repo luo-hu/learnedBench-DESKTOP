@@ -1,3 +1,87 @@
+
+// {
+//     "files.associations": {
+//         "cctype": "cpp",
+//         "clocale": "cpp",
+//         "cmath": "cpp",
+//         "csignal": "cpp",
+//         "cstdarg": "cpp",
+//         "cstddef": "cpp",
+//         "cstdio": "cpp",
+//         "cstdlib": "cpp",
+//         "cstring": "cpp",
+//         "ctime": "cpp",
+//         "cwchar": "cpp",
+//         "cwctype": "cpp",
+//         "array": "cpp",
+//         "atomic": "cpp",
+//         "strstream": "cpp",
+//         "bit": "cpp",
+//         "*.tcc": "cpp",
+//         "bitset": "cpp",
+//         "chrono": "cpp",
+//         "cinttypes": "cpp",
+//         "complex": "cpp",
+//         "condition_variable": "cpp",
+//         "cstdint": "cpp",
+//         "deque": "cpp",
+//         "list": "cpp",
+//         "map": "cpp",
+//         "set": "cpp",
+//         "unordered_map": "cpp",
+//         "unordered_set": "cpp",
+//         "vector": "cpp",
+//         "exception": "cpp",
+//         "algorithm": "cpp",
+//         "functional": "cpp",
+//         "iterator": "cpp",
+//         "memory": "cpp",
+//         "memory_resource": "cpp",
+//         "numeric": "cpp",
+//         "optional": "cpp",
+//         "random": "cpp",
+//         "ratio": "cpp",
+//         "string": "cpp",
+//         "string_view": "cpp",
+//         "system_error": "cpp",
+//         "tuple": "cpp",
+//         "type_traits": "cpp",
+//         "utility": "cpp",
+//         "fstream": "cpp",
+//         "future": "cpp",
+//         "initializer_list": "cpp",
+//         "iomanip": "cpp",
+//         "iosfwd": "cpp",
+//         "iostream": "cpp",
+//         "istream": "cpp",
+//         "limits": "cpp",
+//         "mutex": "cpp",
+//         "new": "cpp",
+//         "ostream": "cpp",
+//         "sstream": "cpp",
+//         "stdexcept": "cpp",
+//         "streambuf": "cpp",
+//         "thread": "cpp",
+//         "cfenv": "cpp",
+//         "typeindex": "cpp",
+//         "typeinfo": "cpp",
+//         "variant": "cpp",
+//         "*.ipp": "cpp",
+//         "codecvt": "cpp",
+//         "csetjmp": "cpp",
+//         "any": "cpp",
+//         "forward_list": "cpp",
+//         "regex": "cpp",
+//         "source_location": "cpp",
+//         "rope": "cpp",
+//         "slist": "cpp",
+//         "scoped_allocator": "cpp",
+//         "shared_mutex": "cpp",
+//         "valarray": "cpp"
+//     },
+//     "cmake.configureOnOpen": false
+// }
+
 {
     "files.associations": {
         "cctype": "cpp",
@@ -66,7 +150,36 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "*.ipp": "cpp",
-        "codecvt": "cpp"
+        "codecvt": "cpp",
+        "csetjmp": "cpp",
+        "any": "cpp",
+        "forward_list": "cpp",
+        "regex": "cpp",
+        "source_location": "cpp",
+        "rope": "cpp",
+        "slist": "cpp",
+        "scoped_allocator": "cpp",
+        "shared_mutex": "cpp",
+        "valarray": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "numbers": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp"
     },
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    // 配置 Run Code 插件的 C++ 编译命令
+//     "code-runner.executorMap": {
+//     "cpp": "g++ -std=c++17 $fullFileName -o $fileNameWithoutExt -mbmi2 -mavx2 -I/usr/local/geos/include -I/usr/local/include -L/usr/local/geos/lib -L/usr/lib/x86_64-linux-gnu -L/usr/local/lib -lgeos -ltpie -lsnappy && $dir$fileNameWithoutExt"
+// },
+//     "code-runner.runInTerminal": true,
+//     "code-runner.preserveFocus": false
+    "code-runner.executorMap": {
+        "cpp": "g++ -std=c++17 $fullFileName -o $HOME/Code/learnedbench/build/bench -mbmi2 -mavx2 -I/usr/local/geos/include -I/usr/local/include -I/usr/include -L/usr/local/geos/lib -L/usr/local/lib -L/usr/local/geos/lib -L/usr/lib/x86_64-linux-gnu -lgeos -lann -ltpie -lsnappy && $HOME/Code/learnedbench/build/$fileNameWithoutExt"
+        //"cpp": "g++ -std=c++17 $fullFileName -o $HOME/Code/learnedbench/utils/datagen -mbmi2 -mavx2 -I/usr/local/geos/include -I/usr/local/include -I/usr/include -L/usr/local/geos/lib -L/usr/local/lib -L/usr/local/geos/lib -L/usr/lib/x86_64-linux-gnu -lgeos -lann -ltpie -lsnappy -lboost_program_options && $HOME/Code/learnedbench/utils/$fileNameWithoutExt"
+
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.preserveFocus": false
+
 }

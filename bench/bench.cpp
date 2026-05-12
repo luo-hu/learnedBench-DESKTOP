@@ -168,11 +168,24 @@ static void build_index(IndexSet& idx_set, const std::string& idx_name, Points& 
 
 
 int main(int argc, char **argv) {
-    assert(argc >= 4);
+    //assert(argc >= 4);
+//  try {
+       // 设置 TPIE 环境变量（替代直接 API 调用）
+        // std::string temp_dir = "/home/lh/Code/learnedbench/temp";
+        // (void)system(("mkdir -p " + temp_dir).c_str());
+        // setenv("TPIE_TEMP", temp_dir.c_str(), 1);  // 1 表示覆盖现有变量
+        // setenv("TPIE_MAX_MEM", "107374182400", 1);  // 1GB = 1024*1024*1024 字节
+        
+        // // 初始化 TPIE（会读取环境变量配置）
+        //tpie::tpie_init();
+        
+        // // 打印配置（使用环境变量值，避免调用可能不存在的 API）
+        // std::cout << "TPIE temp path: " << temp_dir << std::endl;
+        // std::cout << "TPIE memory limit: 1024 MB" << std::endl;
 
     std::string index = argv[1]; // index name
     std::string fname = argv[2]; // data file name
-    size_t N = std::stoi(argv[3]); // dataset size
+    size_t N = std::stoi(argv[3]); // dataset size   
     std::string mode = argv[4]; // bench mode {"range", "knn", "all"}
 
     std::cout << "====================================" << std::endl;
@@ -354,4 +367,13 @@ int main(int argc, char **argv) {
     }
 
 #endif
+ // 程序结束前清理 TPIE
+        // tpie::tpie_finish();
+        // return 0;
+
+// }  catch (const std::exception& e) {
+//         std::cerr << "Exception: " << e.what() << std::endl;
+//         tpie::tpie_finish();
+//         return 1;
+//     }
 }

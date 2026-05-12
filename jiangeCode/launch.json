@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++ - 生成和调试活动文件 myindex",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/bin/bench2d_default",
+            // "args": ["my","/home/lzj/LI/learnedbench/data/synthetic/Default/zipfian_geo_20m_2_1","20000000","all"],
+            "args": ["rtree","/home/lh/Code/learnedbench/data/real/AREAWATER_tpie","20000000","all"],
+            // "program": "${workspaceFolder}/build/bin/datagen",
+            // // "args": ["-t","process_csv","--infname","../data/ENCboxes.csv","-f","ENCboxes"],
+            // "args": ["-t","gen_osmtiger"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "Build",
+        }
+    ]
+}
